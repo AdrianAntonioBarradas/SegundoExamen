@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Table from "./components/Table";
 import "./styles.css";
+import Photo from "./components/Photo";
 
 export default function App() {
-  const [url, setUrl] = useState();
   const [json, setJson] = useState();
   const [table, showTable] = useState(0);
   const [photo, showPhoto] = useState(0);
@@ -48,7 +48,7 @@ export default function App() {
       <button onClick={getTable}> Tabla</button>
       <button onClick={getPhotos}> Fotos</button>
       <Table show={table} data={json} />
-      <Table show={photo} data={json} />
+      <Photo show={photo} data={json} />
     </div>
   );
 }

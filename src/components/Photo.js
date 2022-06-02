@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import "./photo.css";
+
 
 export default function Photo(prop) {
   const json = prop.data;
 
   return prop.show ? (
-    <div className="container">
+    <div className="container"> 
       <div className="row">
         <div className="col-md-3"> id</div>
         <div className="col-md-3"> title</div>
@@ -13,20 +13,18 @@ export default function Photo(prop) {
         <div className="col-md-3"> thumbnailUrl</div>
       </div>
       <div className="row">
-        <ul>
-          {json.map((s) => (
-            <div className="row">
-              <div className="col-md-3"> {s.id}</div>
-              <div className="col-md-3"> {s.title}</div>
-              <div className="col-md-3">
-                {" "}
-                <img src={require()} />
-                {s.url}
-              </div>
-              <div className="col-md-3"> {s.thumbnailUrl}</div>
+        <span>{json.map((s) => (
+          <div className="row" key={"user:"+s.id}>
+            <div className="col-md-3"> {s.id}</div>
+            <div className="col-md-3"> {s.title}</div>
+            <div className="col-md-3">
+              <img className="photo-url" src={s.url} />
             </div>
-          ))}
-        </ul>
+            <div className="col-md-3">
+              <img src={s.thumbnailUrl} /> 
+            </div>
+          </div>
+        ))}</span>
       </div>
     </div>
   ) : (

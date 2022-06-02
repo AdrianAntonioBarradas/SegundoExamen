@@ -4,7 +4,19 @@ import axios from "axios";
 export default function Table(prop) {
   const json = prop.data;
 
+  // useEffect(() => {
+  //   const chunkSize = 10;
+  //   const arr = prop.data;
+  //   const groups = arr.map((e, i) => { 
+  //       return i % chunkSize === 0 ? arr.slice(i, i + chunkSize) : null; 
+  //   }).filter(e => { return e; });
+  //   console.log({arr, groups})
+  // }, []);
+
+  
+
   return prop.show ? (
+    
     <div className="container">
       <div className="row">
         <div className="col-md-3"> userId</div>
@@ -13,16 +25,16 @@ export default function Table(prop) {
         <div className="col-md-3"> body</div>
       </div>
       <div className="row">
-        <ul>
+        <span>
           {json.map((s) => (
-            <div className="row">
-              <div className="col-md-3"> {s.userId}</div>
-              <div className="col-md-3"> {s.id}</div>
-              <div className="col-md-3"> {s.title}</div>
-              <div className="col-md-3"> {s.body}</div>
+            <div className="row" key={"user:"+s.id}>
+              <div className="col-md-3" > {s.userId}</div>
+              <div className="col-md-3" > {s.id}</div>
+              <div className="col-md-3" > {s.title}</div>
+              <div className="col-md-3" > {s.body}</div>
             </div>
           ))}
-        </ul>
+        </span>
       </div>
     </div>
   ) : (
