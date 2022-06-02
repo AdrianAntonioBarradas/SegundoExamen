@@ -1,20 +1,19 @@
-import "./photo.css";
+import "./compStyles.css";
 
 
 export default function Photo(prop) {
   const json = prop.data;
 
   return prop.show ? (
-    <div className="container"> 
-      <div className="row">
-        <div className="col-md-3"> id</div>
-        <div className="col-md-3"> title</div>
-        <div className="col-md-3"> url</div>
-        <div className="col-md-3"> thumbnailUrl</div>
+    <div className="container-fluid"> 
+      <div className="row titles">
+        <div className="col-md-3"> Id</div>
+        <div className="col-md-3"> Title</div>
+        <div className="col-md-3"> Url</div>
+        <div className="col-md-3"> ThumbnailUrl</div>
       </div>
-      <div className="row">
-        <span>{json.map((s) => (
-          <div className="row" key={"user:"+s.id}>
+      {json.map((s) => (
+          <div className="row content" key={"user:"+s.id}>
             <div className="col-md-3"> {s.id}</div>
             <div className="col-md-3"> {s.title}</div>
             <div className="col-md-3">
@@ -24,8 +23,7 @@ export default function Photo(prop) {
               <img src={s.thumbnailUrl} /> 
             </div>
           </div>
-        ))}</span>
-      </div>
+        ))}
     </div>
   ) : (
     false

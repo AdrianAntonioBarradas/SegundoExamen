@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import "./compStyles.css";
 
 export default function Table(prop) {
   const json = prop.data;
@@ -17,25 +17,21 @@ export default function Table(prop) {
 
   return prop.show ? (
     
-    <div className="container">
-      <div className="row">
-        <div className="col-md-3"> userId</div>
-        <div className="col-md-3"> id</div>
-        <div className="col-md-3"> title</div>
-        <div className="col-md-3"> body</div>
+    <div className="container-fluid ">
+      <div className="row titles">
+        <div className="col-md-3"> UserId</div>
+        <div className="col-md-3"> Id</div>
+        <div className="col-md-3"> Title</div>
+        <div className="col-md-3"> Body</div>
       </div>
-      <div className="row">
-        <span>
           {json.map((s) => (
-            <div className="row" key={"user:"+s.id}>
+            <div className="row content" key={"user:"+s.id}>
               <div className="col-md-3" > {s.userId}</div>
               <div className="col-md-3" > {s.id}</div>
               <div className="col-md-3" > {s.title}</div>
               <div className="col-md-3" > {s.body}</div>
             </div>
           ))}
-        </span>
-      </div>
     </div>
   ) : (
     false

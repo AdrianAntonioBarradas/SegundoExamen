@@ -45,10 +45,21 @@ export default function App() {
     <div className="App">
       <h1>Segundo Examen</h1>
       <h2>Barradas Cerna Adrián Antonio</h2>
-      <button onClick={getTable}> Tabla</button>
-      <button onClick={getPhotos}> Fotos</button>
-      <Table show={table} data={json} />
-      <Photo show={photo} data={json} />
+      <div className="row">
+        <div className="col-4">
+          <button className="btn btn-success btn-lg" onClick={getTable}> Tabla</button>
+        </div>
+        <div className="col-4">
+
+        </div>
+        <div className="col-4">
+          <button className="btn btn-success btn-lg" onClick={getPhotos}> Fotos</button>
+        </div>
+      </div>
+      {/* <div className="container-fluid "> */}
+        <Table show={table} data={json} />
+        <Photo show={photo} data={json} />
+      {/* </div> */}
     </div>
   );
 }

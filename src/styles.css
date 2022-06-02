@@ -1,4 +1,27 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: rgba(199, 244, 245, 0.9);
+  background-image: url("./images/azuro.jpg");
+}
+
+
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+
+.container-fluid {
+  border: solid rgb(1, 31, 62);
+  background-color: rgba(250, 235, 215, 0.495);
+}
+
+h1, h2 {
+  color: rgb(253, 247, 239);
+  /* font-weight:700; */
 }

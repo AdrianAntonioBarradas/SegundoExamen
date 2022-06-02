@@ -1,0 +1,20 @@
+.photo-url {
+    height: 200px;
+    width: 200px; 
+}
+
+.titles {
+    border: solid  rgb(18, 17, 17) !important;
+    border-width: thin !important;
+    /* border-top: solid!important; */
+    font-weight: 800;
+    color: rgb(0, 11, 46);
+  }
+
+  .content {
+      margin: auto;
+      ;
+      padding: 5% 0;
+      border: solid black;
+      border-width: thin !important;
+  }
